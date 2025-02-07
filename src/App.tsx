@@ -50,7 +50,7 @@ const App = () => {
         });
         setArticles(allArticles);
         setFilteredArticles(allArticles);
-        setCategories(["general", "business", "entertainment", "health", "science", "sports", "technology"]);
+        setCategories(["All Categories", "general", "business", "entertainment", "health", "science", "sports", "technology"]);
         setSources(Array.from(new Set(allArticles.map(a => a.source))));
       } catch (error) {
         console.error("Error fetching news:", error);
@@ -66,16 +66,19 @@ const App = () => {
 {/* <Preferences onSave={(prefs) => console.log('User Preferences:', prefs)} /> */}
       {/* <div className="mb-4 text-center"> */}
         {/* <label htmlFor="category" className="font-bold mr-2">Select Category:</label> */}
-        <select 
-          id="category" 
-          value={selectedCategory} 
-          onChange={(e) => setSelectedCategory(e.target.value)}
-          className="border p-2 rounded w-52"
-        >
-          {categories.map(cat => (
-            <option key={cat} value={cat}>{cat.charAt(0).toUpperCase() + cat.slice(1)}</option>
-          ))}
-        </select>
+        <div className="flex flex-col md:flex-row gap-4 mb-6 items-center" style={{paddingTop: '1rem'}}>
+          <select 
+            id="category" 
+            value={selectedCategory} 
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className="border p-2 rounded w-52"
+          >
+            {/* <option value="all">All Categories</option> */}
+            {categories.map(cat => (
+              <option key={cat} value={cat}>{cat.charAt(0).toUpperCase() + cat.slice(1)}</option>
+            ))}
+          </select>
+        </div>
       {/* </div> */}
       <NewsFilter 
         articles={articles} 
