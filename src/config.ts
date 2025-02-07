@@ -1,0 +1,8 @@
+export const API_KEYS = {
+    BBC_API: "97ae0d88962148c4afd1182f23db2a44",
+    GNEWS_API: "eb29885f8b013973fb7979547f076747",
+    NEWYORK_API: "TeqGPlT7RplRcChQY4diq9sVVv2EKcam",
+    NEWS_API: "9a5bad17402b46f59de433786b7777eb"
+
+  };
+  
